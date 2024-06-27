@@ -189,9 +189,9 @@ class RemoteRunner:
 
     def _get_hostname(self):
         if self.launch_command:
-            return '$(hostname -f)'
+            return '$(hostname -s)'
         else:
-            return self.session.run('hostname -f').stdout.strip()
+            return self.session.run('hostname -s').stdout.strip()
 
     def _launch_jupyter(self):
         conda_activate_cmd = self._conda_activate_cmd()
